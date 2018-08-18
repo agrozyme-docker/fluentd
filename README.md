@@ -1,4 +1,4 @@
-Fluentd Docker image by fluent project
+Fluentd Docker image
 
 # Settings:
 - Log Directory: /var/log/fluent
