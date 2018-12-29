@@ -12,5 +12,5 @@ RUN set -euxo pipefail \
   && fluentd --dry-run
 
 EXPOSE 24224 5140
-ENTRYPOINT ["tini",  "--"]
+ENTRYPOINT ["/sbin/tini",  "--"]
 CMD ["su-exec", "root", "agrozyme.fluentd.command.sh"]
