@@ -12,4 +12,4 @@ RUN set -euxo pipefail \
 
 EXPOSE 24224 5140
 ENTRYPOINT ["tini",  "--"]
-CMD ["su-exec", "agrozyme.fluentd.command.sh"]
+CMD ["su-exec", "root", "agrozyme.fluentd.command.sh"]
