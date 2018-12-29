@@ -3,6 +3,7 @@ COPY source /
 
 RUN set -euxo pipefail \
   && chmod +x /usr/local/bin/*.sh \
+  && apk add --no-cache su-exec tini \
   && apk add --no-cache --virtual .build-deps build-base ruby-dev gnupg su-exec tini \
   && gem install fluentd -v 1.3.2 --no-document --no-ri --no-rdoc \
   && gem install oj json bigdecimal fluent-plugin-forest fluent-plugin-rewrite-tag-filter --no-document --no-ri --no-rdoc \
@@ -12,5 +13,5 @@ RUN set -euxo pipefail \
   && fluentd --dry-run
 
 EXPOSE 24224 5140
-ENTRYPOINT ["/sbin/tini",  "--"]
+ENTRYPOINT ["tini",  "--"]
 CMD ["su-exec", "root", "agrozyme.fluentd.command.sh"]
