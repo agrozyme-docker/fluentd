@@ -7,7 +7,9 @@ function create_core() {
 }
 
 function main() {
-  create_core
+  # create_core
+  id
+  cat /etc/passwd
   agrozyme.alpine.function.sh change_core
   chown -R core:core /var/log/fluent
   exec fluentd --user core --group core
