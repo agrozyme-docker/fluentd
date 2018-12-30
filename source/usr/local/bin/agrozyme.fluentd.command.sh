@@ -2,8 +2,8 @@
 set -euo pipefail
 
 function change_core() {
-  local old_uid=$(id -u core)
-  local old_gid=$(id -g core)
+  local old_uid=500
+  local old_gid=500
   local new_uid=${DOCKER_UID:-${old_uid}}
   local new_gid=${DOCKER_GID:-${old_gid}}
   groupmod -g "${new_gid}" core
