@@ -8,6 +8,9 @@ Fluentd Docker image
 
 # Example Configuration Files
 - store in source code repository folder: `example`
+- assume `logging.options.tag: docker.{{.Name}}`
+
+# Configuration Files Description
 - `fluent.conf`: run `fluentd --setup` to generate the default configuration file
 - `forward.conf`: input forward with tag `docker.*`
 - `tail.conf`: input tail with docker log json-file
