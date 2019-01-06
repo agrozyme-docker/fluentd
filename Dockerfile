@@ -5,7 +5,7 @@ RUN set -euxo pipefail \
   && chmod +x /usr/local/bin/*.sh \
   && apk add --no-cache --virtual .build-dependencies build-base ruby-dev \
   && gem install --no-document --no-ri --no-rdoc fluentd -v 1.3.2 \
-  && gem install --no-document --no-ri --no-rdoc oj json fluent-plugin-forest fluent-plugin-rewrite-tag-filter \
+  && gem install --no-document --no-ri --no-rdoc oj json fluent-plugin-forest fluent-plugin-rewrite-tag-filter fluent-plugin-elasticsearch \
   && apk del .build-dependencies \
   && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
   && mkdir -p /var/log/fluent /usr/local/etc/fluent \
